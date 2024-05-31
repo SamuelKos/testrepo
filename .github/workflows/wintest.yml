@@ -7,5 +7,5 @@ jobs:
     steps:
       - name: Test virtual display
         run: |
-          python.exe -c 'import this;'
+          python.exe -c 'import tkinter;'
       - run: echo "This job's status is ${{ job.status }}."
