@@ -1,0 +1,11 @@
+name: Actions Demo2
+run-name: ${{ github.actor }} is testing Demo2
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files in the repository
+        run: |
+          python -c 'import this'
+      - run: echo "🍏 This job's status is ${{ job.status }}."
