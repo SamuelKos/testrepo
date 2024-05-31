@@ -1,7 +1,7 @@
 name: Github Actions test
 run-name: ${{ github.actor }} is testing Github Actions
-# Just some event that should not happen
-on: [delete]
+# Run Manually
+on: [workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
