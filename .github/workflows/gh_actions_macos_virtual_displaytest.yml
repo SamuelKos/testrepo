@@ -3,10 +3,10 @@ run-name: ${{ github.actor }} is testing Github Actions
 # just some event that should not happen
 on: [delete]
 jobs:
-	Explore-GitHub-Actions:
-		runs-on: macos-12
-		steps:
-			- name: Test virtual display
-				run: |
-					python -c 'import tkinter;r=tkinter.Tk();print(r.winfo_screenheight());print(r.winfo_screenwidth());'
-			- run: echo "This job's status is ${{ job.status }}."
+  Explore-GitHub-Actions:
+    runs-on: macos-12
+    steps:
+      - name: Test virtual display
+        run: |
+          python -c 'import tkinter;r=tkinter.Tk();print(r.winfo_screenheight());print(r.winfo_screenwidth());'
+      - run: echo "This job's status is ${{ job.status }}."
