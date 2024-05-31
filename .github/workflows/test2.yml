@@ -7,5 +7,6 @@ jobs:
     steps:
       - name: List files in the repository
         run: |
+          sudo apt-get install -y python3-tk
           python -c 'import tkinter;r=tkinter.Tk();print(dir(r));'
       - run: echo "🍏 This job's status is ${{ job.status }}."
