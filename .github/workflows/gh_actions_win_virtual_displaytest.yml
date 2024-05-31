@@ -7,5 +7,5 @@ jobs:
     steps:
       - name: Test virtual display
         run: |
-          python.exe -c 'import tkinter;r=tkinter.Tk()'
+          python.exe -c 'import tkinter;r=tkinter.Tk();print(r.winfo_screenheight());print(r.winfo_screenwidth());'
       - run: echo "This job's status is ${{ job.status }}."
