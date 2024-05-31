@@ -1,0 +1,11 @@
+name: Github Actions test
+run-name: ${{ github.actor }} is testing Github Actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: windows-latest
+    steps:
+      - name: Test virtual display
+        run: |
+          ls
+      - run: echo "This job's status is ${{ job.status }}."
