@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-# just some event that should not happen
+# Just some event that should not happen
 on: [delete]
 jobs:
   Explore-GitHub-Actions:
