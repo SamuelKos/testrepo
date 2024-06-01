@@ -50,14 +50,14 @@ jobs:
           python -c "import henxel
           e=henxel.Editor()
           
-          def e.event_check(e, event=None):
+          def event_check(event=None):
             print(event.state)
             return
           
           events = ['<Up>', '<Down>', '<Left>', '<Right>']
           
           for event in events:
-            bid = e.contents.bind(event, e.event_check)
+            bid = e.contents.bind(event, event_check)
             e.contents.event_generate(event)
             e.contents.unbind(event, funcid=bid)"
 
