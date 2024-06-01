@@ -46,8 +46,20 @@ jobs:
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
           . venv/bin/activate
           #python -c 'import tkinter;r=tkinter.Tk()'
-          python -c 'import henxel
+          
+          python -c "import henxel
           e=henxel.Editor()
-          e.tk.eval("parray tcl_platform")'
+          
+          def e.event_check(e, event=None):
+            print(event.state)
+            return
+          
+          events = ['<Up>', '<Down>', '<Left>', '<Right>']
+          
+          for event in events:
+            bid = e.contents.bind(event, e.event_check)
+            e.contents.event_generate(event)
+            e.contents.unbind(event, funcid=bid)"
+
           deactivate
       #- run: echo "🍏 This job's status is ${{ job.status }}."
