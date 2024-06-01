@@ -31,6 +31,8 @@ jobs:
           . venv/bin/activate
           pip install --upgrade pip setuptools wheel
           #pip install henxel
-          python -c 'import tkinter;'
+          export DISPLAY=:99
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+          python -c 'import tkinter;r=tkinter.Tk()'
           #python -c 'import henxel;e=henxel.Editor();print(e.version);'
       - run: echo "🍏 This job's status is ${{ job.status }}."
