@@ -46,9 +46,8 @@ jobs:
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
           . venv/bin/activate
           #python -c 'import tkinter;r=tkinter.Tk()'
-          python -c
-          'import henxel;
-          e=henxel.Editor();
-          e.tk.eval("parray tcl_platform");'
+          python -c 'import henxel
+          e=henxel.Editor()
+          e.tk.eval("parray tcl_platform")'
           deactivate
       #- run: echo "🍏 This job's status is ${{ job.status }}."
