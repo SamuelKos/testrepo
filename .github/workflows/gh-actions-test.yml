@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: GitHub Actions Testing
+run-name: ${{ github.actor }} is testing GitHub Actions
 # Run on push
 on: [push]
 jobs:
@@ -41,7 +41,7 @@ jobs:
           pip install -q --upgrade pip setuptools wheel
           pip install -q -r requirements.txt
           deactivate
-      - name: Use Prime Numbers
+      - name: Use Python venv
         run: |
           # Activate virtual display
           export DISPLAY=:99
