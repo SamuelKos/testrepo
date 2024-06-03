@@ -33,14 +33,8 @@ class Editor(tkinter.Toplevel):
 			x = x// 100
 			for j in range(10000):
 				x = x// 100
-				for k in range(10000):
-					x = x// 100
-					for l in range(10000):
-						x = x// 100
-						for m in range(10000):
-							x = x // 100
-							for n in range(10000):
-								x = x + n
+				for n in range(10000):
+					x = x + n
 		return 'break'	
 		
 	def mycallback(self, event=None):
