@@ -18,11 +18,12 @@ class Editor(tkinter.Toplevel):
 		self.textwid.wait_visibility()
 		self.textwid.focus_set()
 		self.textwid.mark_set('insert', '1.0')
-		
+		print('1')
 		self.after(300, self.textwid.event_generate('<Control-p>'))
-		
+		print('2')
 	
 	def mycallback2(self, event=None):
+		print('3')
 		print(event.state)
 		self.root.quit()
 		self.root.destroy()
