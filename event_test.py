@@ -28,13 +28,11 @@ class Editor(tkinter.Toplevel):
 		return 'break'
 		
 	def do_nothing(self):
-		x = 0
+		x = 1
 		for i in range(10000):
 			x = x// 100
-			for j in range(10000):
-				x = x// 100
-				for n in range(10000):
-					x = x + n
+			for n in range(10000):
+				x = x + n
 		return 'break'	
 		
 	def mycallback(self, event=None):
