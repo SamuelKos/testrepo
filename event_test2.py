@@ -2,6 +2,7 @@
 import tkinter
 import _tkinter
 import tkinter.ttk as ttk
+import unittest
 
 class TKinterTestCase(unittest.TestCase):
 	""" These methods are going to be the same for every GUI test,
@@ -61,6 +62,5 @@ class View_AskText(object):
 
 
 if __name__ == '__main__':
-	import unittest
 	unittest.main()
 
