@@ -20,12 +20,28 @@ class Editor(tkinter.Toplevel):
 		self.textwid.mark_set('insert', '1.0')
 		
 		self.after(300, self.textwid.event_generate('<Control-p>'))
+		self.do_nothing()
 		
 	
 	def mycallback2(self, event=None):
 		print(event.state, 'jou')
 		return 'break'
 		
+	def do_nothing(self):
+		x = 0
+		for i in range(10000):
+			x = x// 100
+			for j in range(10000):
+				x = x// 100
+				for k in range(10000):
+					x = x// 100
+					for l in range(10000):
+						x = x// 100
+						for m in range(10000):
+							x = x // 100
+							for n in range(10000):
+								x = x + n
+		return 'break'	
 		
 	def mycallback(self, event=None):
 		self.eventnum += 1
