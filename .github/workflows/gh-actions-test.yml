@@ -52,7 +52,9 @@ jobs:
           
           # Commands can be given just like in script-file
           python -c "import event_test
-          e=event_test.Editor()"
+          import time
+          e=event_test.Editor()
+          time.sleep(1)"
           
           # Deactivate python virtual environment
           deactivate
