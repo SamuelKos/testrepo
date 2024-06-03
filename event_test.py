@@ -9,8 +9,8 @@ class Editor(tkinter.Toplevel):
 		super().__init__(self.root, class_='myclass', bd=4)
 
 		self.textwid = tkinter.Text(self.root)
-		textwid.bind('<Control-p>', mycallback2)
-		textwid.pack()
+		self.textwid.pack()
+		self.textwid.bind('<Control-p>', mycallback2)
 		
 		
 		self.eventnum = 0
