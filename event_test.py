@@ -48,9 +48,14 @@ class Editor(tkinter.Toplevel):
 
 
 if __name__ == '__main__':
-
+	print('a')
 	r = tkinter.Tk()
+	print('a')
+	r.withdraw()
+	print('a')
 	e = Editor(r)
+	print('a')
 	e.mainloop()
+	print('a')
 
 		
