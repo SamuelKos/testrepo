@@ -49,11 +49,13 @@ jobs:
 
           # Activate python virtual environment
           . venv/bin/activate
-
+          
+          python event_test.py
+          
           # Commands can be given just like in script-file
-          python -c "import henxel
-          e=henxel.Editor()
-          print(e.version)"
+          #python -c "import henxel
+          #e=henxel.Editor()
+          #print(e.version)"
           
           # Deactivate python virtual environment
           deactivate
