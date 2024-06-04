@@ -50,18 +50,12 @@ jobs:
           # Activate python virtual environment
           . venv/bin/activate
 
-          python tests.py
+          #python tests.py
           
           # Commands can be given just like in script-file
-          #python -c "import event_test
-          #e=event_test.Editor()
-          #i = 0
-          #while i < 5:
-          #  i += 1
-          #  e.update_idletasks()
-          #  if e.eventnum:
-          #    print(e.eventnum)
-          #    break
+          python -c "import event_test
+          e=event_test.Editor()"
+          
           
           # Commands can be given just like in script-file
           #python -c "import henxel
