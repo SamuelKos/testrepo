@@ -13,7 +13,7 @@ class Editor(tkinter.Toplevel):
 		self.textwid.bind('<Control-p>', self.mycallback2)
 
 		
-		self.eventnum = 0
+		self.eventnum = False
 		self.textwid.insert('1.0', 'asd')
 		self.textwid.wait_visibility()
 		self.textwid.focus_set()
@@ -22,7 +22,7 @@ class Editor(tkinter.Toplevel):
 		self.after(300, self.textwid.event_generate('<Control-p>'))
 		
 	def mycallback2(self, event=None):
-		print(event.state)
+		self.eventnum = event.state
 		self.root.quit()
 		self.root.destroy()
 		return 'break'
