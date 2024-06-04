@@ -1,6 +1,6 @@
 name: GitHub Actions Testing
 run-name: ${{ github.actor }} is testing GitHub Actions
-# Run on push
+# Run
 on: [push]
 jobs:
   Explore-GitHub-Actions:
