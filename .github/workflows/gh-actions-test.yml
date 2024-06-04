@@ -46,14 +46,15 @@ jobs:
           # Activate virtual display
           export DISPLAY=:99
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-
+          
           # Activate python virtual environment
           . venv/bin/activate
-
+          
           # Commands can be given just like in script-file
           python -c "import event_test
           e=event_test.Editor()
-          e.update_idletasks()"
+          e.update_idletasks()
+          print(e.eventnum)"
           
           # Commands can be given just like in script-file
           #python -c "import henxel
