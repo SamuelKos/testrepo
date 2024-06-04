@@ -5,6 +5,8 @@ import os
 class Editor(tkinter.Toplevel):
 
 	def __init__(self):
+		os.system('Xvfb :1 -screen 0 1600x1200x16  &')
+		os.environ["DISPLAY"] = ":1.0"
 		
 		self.root = tkinter.Tk()
 		super().__init__(self.root, class_='myclass', bd=4)
