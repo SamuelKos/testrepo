@@ -53,8 +53,13 @@ jobs:
           # Commands can be given just like in script-file
           python -c "import event_test
           e=event_test.Editor()
-          e.update_idletasks()
-          print(e.eventnum)"
+          i = 0
+          while i < 5:
+            i += 1
+            e.update_idletasks()
+            if e.eventnum:
+              print(e.eventnum)
+              break
           
           # Commands can be given just like in script-file
           #python -c "import henxel
