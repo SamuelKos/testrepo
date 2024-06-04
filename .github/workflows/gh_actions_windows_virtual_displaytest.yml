@@ -8,5 +8,49 @@ jobs:
     steps:
       - name: Test virtual display
         run: |
-          python.exe -c 'import tkinter;r=tkinter.Tk();print(r.winfo_screenheight());print(r.winfo_screenwidth());'
+           - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache Python venv
+        id: cache-venv
+        uses: actions/cache@v4
+        with:
+          path: venv
+          key: ${{ runner.os }}-venv
+      - name: Create Python venv
+        if: steps.cache-venv.outputs.cache-hit != 'true'
+        run: |
+          # Show python version
+          python -V
+          echo "no cache"
+          # Show pip cache dir
+          #pip cache dir
+          python -m venv venv
+          . venv/bin/activate
+          #pip cache dir
+          pip install -q --upgrade pip setuptools wheel
+          pip install -q -r requirements.txt
+          deactivate
+      - name: Use Python venv
+        run: |
+          # Activate virtual display
+          #export DISPLAY=:99
+          #sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+          
+          # Activate python virtual environment
+          . venv/bin/activate
+
+          #python -i test.py
+          
+          # Commands can be given just like in script-file
+          # or in Python-console:
+          python -c "import event_test
+          e=event_test.Editor()
+          exit()"
+          
+          # Deactivate python virtual environment
+          deactivate
+          
       - run: echo "This job's status is ${{ job.status }}."
