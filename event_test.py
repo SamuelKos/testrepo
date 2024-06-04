@@ -34,7 +34,9 @@ class TestViewAskText(TKinterTestCase):
 		v = View_AskText(self.root, value='A')
 		self.pump_events()
 		v.e.focus_set()
+		self.pump_events()
 		v.e.insert(tkinter.END, 'B')
+		self.pump_events()
 		v.e.event_generate('<Return>')
 		self.pump_events()
 
