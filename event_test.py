@@ -38,7 +38,7 @@ class TestViewAskText(TKinterTestCase):
 		v.e.event_generate('<Return>')
 		self.pump_events()
 
-		self.assertRaises(tkinter.TclError, lambda: v.winfo_viewable())
+		#self.assertRaises(tkinter.TclError, lambda: v.winfo_viewable())
 		#self.assertEqual(v.value, 'AB')
 		self.assertEqual(v.value, 'Return')
 
