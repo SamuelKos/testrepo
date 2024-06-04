@@ -8,7 +8,6 @@ class Editor(tkinter.Toplevel):
 		
 		self.root = root
 		super().__init__(self.root, class_='myclass', bd=4)
-		self.title('Tittelii')
 		
 		self.textwid = tkinter.Text(self.root)
 		self.textwid.bind('<Control-p>', self.mycallback2)
@@ -24,7 +23,8 @@ class Editor(tkinter.Toplevel):
 		self.waitvar = tkinter.IntVar()
 		self.waitvar.set(False)
 		
-		self.after(300, self.textwid.event_generate('<Control-p>'))
+		#self.after(300, self.textwid.event_generate('<Control-p>'))
+		self.textwid.event_generate('<Control-p>')
 		
 	
 	def mycallback2(self, event=None):
