@@ -20,7 +20,7 @@ class Editor(tkinter.Toplevel):
 		self.textwid.mark_set('insert', '1.0')
 		
 		#self.after(300, 
-		self.textwid.event_generate('<Control-p>'))
+		self.textwid.event_generate('<Control-p>')
 		
 	def mycallback2(self, event=None):
 		self.eventnum = event.state
