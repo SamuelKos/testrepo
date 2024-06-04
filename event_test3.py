@@ -23,15 +23,16 @@ class Editor(tkinter.Toplevel):
 		self.waitvar = tkinter.IntVar()
 		self.waitvar.set(False)
 		
-		#self.after(300, self.textwid.event_generate('<Control-p>'))
-		self.textwid.event_generate('<Control-p>')
+		self.after(200, self.textwid.event_generate('<Control-p>'))
+		#self.textwid.event_generate('<Control-p>')
 		
 	
 	def mycallback2(self, event=None):
 		#print(event.state)
 		self.waitvar.set(event.state)
-		#self.root.quit()
-		#self.root.destroy()
+		print(self.waitvar.get())
+		self.root.quit()
+		self.root.destroy()
 
 		return 'break'
 		
@@ -55,22 +56,10 @@ class Editor(tkinter.Toplevel):
 
 
 
-def start_application():
-	root = tkinter.Tk()
-	app = Editor(root)
-	return app
-
 
 
 if __name__ == '__main__':
-	a = start_application()
-	a.mainloop()
-	
-##	if os.name != "nt" and os.getenv("GITHUB_ACTIONS"):
-##		print('jou')
-##		os.system('Xvfb :1 -screen 0 1600x1200x16  &')
-##		os.environ["DISPLAY"] = ":1.0"
-##
-##	r = tkinter.Tk()
-##	e = Editor(r)
-##	e.mainloop()
+
+	r = tkinter.Tk()
+	e = Editor(r)
+	e.mainloop()
