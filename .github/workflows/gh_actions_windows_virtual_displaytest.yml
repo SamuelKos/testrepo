@@ -26,7 +26,7 @@ jobs:
           # Show pip cache dir
           #pip cache dir
           python -m venv venv
-          .venv/Scripts/activate
+          venv/Scripts/activate.bat
           #pip cache dir
           pip install -q --upgrade pip setuptools wheel
           pip install -q -r requirements.txt
@@ -38,7 +38,7 @@ jobs:
           #sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
           
           # Activate python virtual environment
-          .venv/Scripts/activate
+          venv/Scripts/activate.bat
 
           #python -i test.py
           
