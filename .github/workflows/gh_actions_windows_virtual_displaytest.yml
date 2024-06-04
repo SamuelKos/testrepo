@@ -30,7 +30,7 @@ jobs:
           #pip cache dir
           pip install -q --upgrade pip setuptools wheel
           pip install -q -r requirements.txt
-          deactivate
+          venv/Scripts/deactivate.bat
       - name: Use Python venv
         run: |
           # Activate virtual display
@@ -49,6 +49,6 @@ jobs:
           exit()"
           
           # Deactivate python virtual environment
-          deactivate
+          venv/Scripts/deactivate.bat
           
       - run: echo "This job's status is ${{ job.status }}."
