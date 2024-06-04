@@ -44,8 +44,8 @@ jobs:
       - name: Use Python venv
         run: |
           # Activate virtual display
-          #export DISPLAY=:99
-          #sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+          export DISPLAY=:1.0
+          sudo Xvfb :1 -screen 0 1280x1024x24 > /dev/null 2>&1 &
           
           # Activate python virtual environment
           . venv/bin/activate
