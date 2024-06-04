@@ -50,7 +50,7 @@ jobs:
           # Activate python virtual environment
           . venv/bin/activate
 
-          python event_test.py
+          python -i test.py
           
           # Commands can be given just like in script-file
           # or in Python-console:
