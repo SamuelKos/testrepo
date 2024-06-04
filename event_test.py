@@ -3,9 +3,9 @@ import tkinter
 
 class Editor(tkinter.Toplevel):
 
-	def __init__(self, root):
+	def __init__(self):
 		
-		self.root = root
+		self.root = tkinter.Tk()
 		super().__init__(self.root, class_='myclass', bd=4)
 
 		self.textwid = tkinter.Text(self.root)
@@ -18,15 +18,14 @@ class Editor(tkinter.Toplevel):
 		self.textwid.wait_visibility()
 		self.textwid.focus_set()
 		self.textwid.mark_set('insert', '1.0')
-		print('1')
+		
 		self.after(300, self.textwid.event_generate('<Control-p>'))
-		print('2')
-	
+		
 	def mycallback2(self, event=None):
-		print('3')
 		print(event.state)
 		self.root.quit()
 		self.root.destroy()
+		return 'break'
 
 	
 	def mycallback(self, event=None):
@@ -44,18 +43,5 @@ class Editor(tkinter.Toplevel):
 		print(10*'= ')
 		
 		return 'break'
-
-
-
-if __name__ == '__main__':
-	print('a')
-	r = tkinter.Tk()
-	print('a')
-	r.withdraw()
-	print('a')
-	e = Editor(r)
-	print('a')
-	e.mainloop()
-	print('a')
 
 		
