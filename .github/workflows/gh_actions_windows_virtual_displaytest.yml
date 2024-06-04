@@ -26,7 +26,7 @@ jobs:
           # Show pip cache dir
           #pip cache dir
           python -m venv venv
-          .venv/Sripts/activate
+          .venv/Scripts/activate
           #pip cache dir
           pip install -q --upgrade pip setuptools wheel
           pip install -q -r requirements.txt
