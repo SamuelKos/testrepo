@@ -6,7 +6,44 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: macos-12
     steps:
-      - name: Test virtual display
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache Python venv
+        id: cache-venv
+        uses: actions/cache@v4
+        with:
+          path: venv
+          key: ${{ runner.os }}-venv
+      - name: Create Python venv
+        if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
-          python -c 'import tkinter;r=tkinter.Tk();print(r.winfo_screenheight());print(r.winfo_screenwidth());'
-      - run: echo "This job's status is ${{ job.status }}."
+          # Show python version
+          python -V
+          echo "no cache"
+          # Show pip cache dir
+          #pip cache dir
+          python -m venv venv
+          . venv/bin/activate
+          #pip cache dir
+          pip install -q --upgrade pip setuptools wheel
+          pip install -q -r requirements.txt
+          deactivate
+      - name: Use Python venv
+        run: |
+          
+          # Activate python virtual environment
+          . venv/bin/activate
+
+          # Commands can be given just like in script-file
+          # or in Python-console:
+          python -c "import event_test
+          e=event_test.Editor()
+          exit()"
+          
+          # Deactivate python virtual environment
+          deactivate
+          
+      #- run: echo "This job's status is ${{ job.status }}."
