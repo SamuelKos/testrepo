@@ -26,8 +26,8 @@ class Editor(tkinter.Toplevel):
 		self.waitvar = tkinter.IntVar()
 		self.waitvar.set(False)
 		
-		#self.after(300,
-		self.textwid.event_generate('<Control-p>')
+		self.after(300,self.textwid.event_generate('<Control-p>')
+		#self.textwid.event_generate('<Control-p>')
 		
 	
 	def mycallback2(self, event=None):
