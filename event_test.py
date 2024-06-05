@@ -13,7 +13,7 @@ class Editor(tkinter.Toplevel):
 
 		self.textwid = tkinter.Text(self.root)
 		#self.textwid.bind('<<Copy>>', self.mycallback2)
-		self.textwid.bind('<Control-p>', self.mycallback2)
+		self.textwid.bind('<Left>', self.mycallback2)
 		self.textwid.pack()
 		
 		
@@ -21,12 +21,12 @@ class Editor(tkinter.Toplevel):
 		self.textwid.insert('1.0', 'asd')
 		self.textwid.wait_visibility()
 		self.textwid.focus_set()
-		self.textwid.mark_set('insert', '1.0')
+		self.textwid.mark_set('insert', '1.1')
 		
 		self.waitvar = tkinter.IntVar()
 		self.waitvar.set(False)
 		
-		self.after(300,self.textwid.event_generate('<Control-p>'))
+		self.after(300,self.textwid.event_generate('<Left>'))
 		#self.textwid.event_generate('<Control-p>')
 		
 	
