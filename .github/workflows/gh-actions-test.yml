@@ -57,6 +57,8 @@ jobs:
           # or in Python-console:
           python -c "import event_test
           e=event_test.Editor()
+          e.event_generate('<Shift-Left>')
+          e.quit_me()
           exit()"
           
           # Deactivate python virtual environment
