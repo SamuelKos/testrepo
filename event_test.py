@@ -13,7 +13,7 @@ class Editor(tkinter.Toplevel):
 
 		self.textwid = tkinter.Text(self.root)
 		#self.textwid.bind('<<Copy>>', self.mycallback2)
-		self.textwid.bind('<Left>', self.mycallback2)
+		self.textwid.bind('<Shift-Left>', self.mycallback2)
 		self.textwid.pack()
 		
 		
@@ -26,15 +26,18 @@ class Editor(tkinter.Toplevel):
 		self.waitvar = tkinter.IntVar()
 		self.waitvar.set(False)
 		
-		self.after(300,self.textwid.event_generate('<Left>'))
+		#self.after(300,self.textwid.event_generate('<Left>'))
 		#self.textwid.event_generate('<Control-p>')
 		
-	
+
 	def mycallback2(self, event=None):
 		#self.textwid.event_generate('<Control-p>')
 		#self.update_idletasks()
-		print(event.state)
-##		self.waitvar.set(True)
+		print(event.state, event.keysym)
+		return 'break'
+
+	
+	def quit_me(self, event=None):
 		self.root.quit()
 		self.root.destroy()
 		return 'break'
