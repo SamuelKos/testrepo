@@ -33,9 +33,6 @@ jobs:
           venv/Scripts/deactivate.bat
       - name: Use Python venv
         run: |
-          # Activate virtual display
-          #export DISPLAY=:99
-          #sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
           
           # Activate python virtual environment
           venv/Scripts/activate.bat
@@ -46,6 +43,8 @@ jobs:
           # or in Python-console:
           python -c "import event_test
           e=event_test.Editor()
+          e.event_generate('<Shift-Left>')
+          e.quit_me()
           exit()"
           
           # Deactivate python virtual environment
