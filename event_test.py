@@ -20,7 +20,7 @@ class Editor(tkinter.Toplevel):
 		
 		
 		self.eventnum = 0
-		self.textwid.insert('1.0', 'asd')
+		self.textwid.insert('1.0', 30*'asd\n')
 		self.textwid.wait_visibility()
 		self.textwid.focus_set()
 		self.textwid.mark_set('insert', '1.1')
@@ -47,6 +47,7 @@ class Editor(tkinter.Toplevel):
 		
 	def mycallback(self, event=None):
 		print('jou')
+		return 'break'
 		
 
 
