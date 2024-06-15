@@ -1,19 +1,21 @@
 import tkinter
-import os
+import tkinter.font
 
 
 class Editor(tkinter.Toplevel):
 
 	def __init__(self):
-		#os.system('Xvfb  &')
-		#os.environ["DISPLAY"] = ":0.0"
 		
 		self.root = tkinter.Tk()
 		super().__init__(self.root, class_='myclass', bd=4)
 
-		self.textwid = tkinter.Text(self.root)
+		self.menufont = tkinter.font.Font(family='TkDefaulFont', size=10, name='menufont')
+		self.textwid = tkinter.Text(self.root, font=self.menufont)
+		
 		#self.textwid.bind('<<Copy>>', self.mycallback2)
 		self.textwid.bind('<Shift-Left>', self.mycallback2)
+		self.textwid.bind( "<<TkWorldChanged>>", self.mycallback)
+
 		self.textwid.pack()
 		
 		
@@ -44,20 +46,7 @@ class Editor(tkinter.Toplevel):
 		
 		
 	def mycallback(self, event=None):
-		self.eventnum += 1
-		
-		print(f'Begin Event {self.eventnum}:\n')
-	
-		l = [ item for item in dir(event) if '_' not in item ]
-		
-		for key in l:
-			print(key, getattr(event, key))
-		
-		
-		print(f'\nEnd Event {self.eventnum}:')
-		print(10*'= ')
-		
-		return 'break'
+		print('jou')
 		
 
 
