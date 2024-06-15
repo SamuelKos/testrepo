@@ -43,8 +43,9 @@ jobs:
           # or in Python-console:
           python -c "import event_test
           e=event_test.Editor()
-          e.event_generate('<Shift-Left>')
           e.menufont.configure(underline=1)
+          e.update_idletasks()
+          e.event_generate('<Shift-Left>')
           e.quit_me()
           exit()"
           
